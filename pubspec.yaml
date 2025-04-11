@@ -1,0 +1,23 @@
+name: wollet
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+environment:
+  sdk: ^3.7.0
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  get: ^4.7.2
+  drift: ^2.26.0
+  dartx: ^1.2.0
+  slang: ^4.6.1
+  slang_flutter: ^4.6.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.15
+  slang_build_runner: ^4.6.0
+flutter:
+  uses-material-design: true
