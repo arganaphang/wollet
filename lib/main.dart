@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wollet/i18n/strings.g.dart';
+import 'package:wollet/ui/screen/addtransaction/screen_addtransaction.dart';
+import 'package:wollet/ui/screen/main/screen_main.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +16,12 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: Scaffold(body: Center(child: Text(t.hello(name: 'JOHN')))),
+      theme: ThemeData(primarySwatch: Colors.red, useMaterial3: true),
+      routes: {
+        ScreenMain.routeName: (context) => const ScreenMain(),
+        ScreenAddtransaction.routeName:
+            (context) => const ScreenAddtransaction(),
+      },
     );
   }
 }
