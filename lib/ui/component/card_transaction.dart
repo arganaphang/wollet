@@ -13,14 +13,27 @@ class CardTransaction extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: ListTile(
-        leading: Icon(
-          transaction.type == TransactionType.income
-              ? Icons.arrow_upward_rounded
-              : Icons.arrow_downward_rounded,
-          color:
+        leading: Container(
+          decoration: BoxDecoration(
+            color: (transaction.type == TransactionType.income
+                    ? Colors.green
+                    : Colors.red)
+                .shade100
+                .withAlpha(100),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(
               transaction.type == TransactionType.income
-                  ? Colors.green
-                  : Colors.red,
+                  ? Icons.arrow_upward_rounded
+                  : Icons.arrow_downward_rounded,
+              color:
+                  transaction.type == TransactionType.income
+                      ? Colors.green
+                      : Colors.red,
+            ),
+          ),
         ),
         title: Text(transaction.title),
         subtitle: Text(transaction.createdAt.toString()),
